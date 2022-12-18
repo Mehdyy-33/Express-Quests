@@ -1,5 +1,6 @@
 const database = require("./database");
 
+
 const getUsers = (req, res) => {
   const initialSql = "select * from users";
   const where = [];
@@ -56,6 +57,8 @@ const getUserById = (req, res) => {
 };
 
 const postUser = (req, res) => {
+
+
   const { firstname, lastname, email, city, language, hashedPassword } =
     req.body;
 
@@ -112,6 +115,8 @@ const deleteUser = (req, res) => {
       res.status(500).send("Error deleting the user");
     });
 };
+
+
 
 module.exports = {
   getUsers,
